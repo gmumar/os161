@@ -1,0 +1,24 @@
+Cats and Mice:
+Starvation occurs when one a thread cannot access the resources because other threads are getting all the control.
+In our solution, we realized that the number of cats and mice are bounded.
+Since there are six cats and two mice and each has to eat 4 times, the maximum iterations for the cat threads is 24 while the maximum iterations for the mice threads is 8.
+Our solution works by using a room semaphore which is a mutex. When the first cat occupies the room, it uses the semaphore to lock the room for all other mice. 
+The room contains the two bowls, so as long as a cat is in the room a mouse should not enter.
+The cats then use the bowl semaphore which is a counting semaphore initialized to two for the two bowls. Therefore, each bowl can be used by only one thread.
+We also used two global variables for keeping a count for the total number of cats or mice currently in the room.
+In order to protect these global variables, we used two more mutex semaphores. The purpose of the count was to make sure that only the first cat or mouse can lock and unlock the room.
+
+Stoplight:
+Requirements:
+1. No two cars can be in the same portion of the intersection at the same time:
+Each car has its own path preplanned and depending on where it wanted to go next, it tried to acquire a lock on that part of the intersection.
+This guaranteed that a car could not enter a portion of an intersection, until the previous car released the lock.
+
+2. The first car to reach the intersection should be the first to reach the destination :
+For each entrance to the intersection, we created a approach variable. If this was locked, it implied that a car had already approached the intersection.
+Therefore, the thread for the next car would have to wait until the car before it has entered its next region. The threads could not overtake each other within
+the intersection either since each car locks its next region.
+
+3. Should allow two or more cars to be in the intersection at a time:
+In order to allow more than two cars in the intersection, we had a count for the total number of cars in the intersection at a given time.
+We realized that in order to avoid deadlock, the maximum cars in the intersection should be three. Therefore, we bounded this count by three cars.

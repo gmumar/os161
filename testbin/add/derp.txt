@@ -1,0 +1,148 @@
+
+add:     file format elf32-tradbigmips
+add
+architecture: mips:3000, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x004000b0
+
+Program Header:
+0x70000000 off    0x00000094 vaddr 0x00400094 paddr 0x00400094 align 2**2
+         filesz 0x00000018 memsz 0x00000018 flags r--
+    LOAD off    0x00000000 vaddr 0x00400000 paddr 0x00400000 align 2**12
+         filesz 0x00000f50 memsz 0x00000f50 flags r-x
+    LOAD off    0x00001000 vaddr 0x10000000 paddr 0x10000000 align 2**12
+         filesz 0x00000000 memsz 0x00000010 flags rw-
+private flags = 1001: [abi=O32] [mips1] [not 32bitmode]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .reginfo      00000018  00400094  00400094  00000094  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA, LINK_ONCE_SAME_SIZE
+  1 .text         00000d80  004000b0  004000b0  000000b0  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       00000120  00400e30  00400e30  00000e30  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .data         00000000  10000000  10000000  00001000  2**4
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .sbss         00000008  10000000  10000000  00001000  2**2
+                  ALLOC
+  5 .bss          00000000  10000010  10000010  00001008  2**4
+                  ALLOC
+  6 .comment      000000d8  00000000  00000000  00001008  2**0
+                  CONTENTS, READONLY
+  7 .pdr          00000760  00000000  00000000  000010e0  2**2
+                  CONTENTS, READONLY
+  8 .mdebug.abi32 00000000  00000000  00000000  00001840  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00400094 l    d  .reginfo	00000000 
+004000b0 l    d  .text	00000000 
+00400e30 l    d  .rodata	00000000 
+10000000 l    d  .data	00000000 
+10000000 l    d  .sbss	00000000 
+10000010 l    d  .bss	00000000 
+00000000 l    d  .comment	00000000 
+00000000 l    d  .pdr	00000000 
+00000000 l    d  .mdebug.abi32	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    d  *ABS*	00000000 
+00000000 l    df *ABS*	00000000 mips-crt0.S
+00000000 l    df *ABS*	00000000 /homes/u/umarghul/ece344/root/include/kern/callno.h
+00000000 l    df *ABS*	00000000 mips-crt0.S
+00000000 l    df *ABS*	00000000 /homes/u/umarghul/ece344/root/include/machine/asmdefs.h
+00000000 l    df *ABS*	00000000 mips-crt0.S
+00000000 l    df *ABS*	00000000 <command line>
+00000000 l    df *ABS*	00000000 <built-in>
+00000000 l    df *ABS*	00000000 mips-crt0.S
+00000000 l    df *ABS*	00000000 add.c
+00000000 l    df *ABS*	00000000 printf.c
+00400170 l     F .text	00000000 __printf_send
+00000000 l    df *ABS*	00000000 atoi.c
+00400e50 l     O .rodata	0000000b digits.0
+00000000 l    df *ABS*	00000000 strchr.c
+00000000 l    df *ABS*	00000000 putchar.c
+00000000 l    df *ABS*	00000000 errno.c
+00000000 l    df *ABS*	00000000 exit.c
+00000000 l    df *ABS*	00000000 syscalls.S
+00000000 l    df *ABS*	00000000 /homes/u/umarghul/ece344/root/include/machine/asmdefs.h
+00000000 l    df *ABS*	00000000 syscalls.S
+00000000 l    df *ABS*	00000000 /homes/u/umarghul/ece344/root/include/kern/callno.h
+00000000 l    df *ABS*	00000000 syscalls.S
+00000000 l    df *ABS*	00000000 <command line>
+00000000 l    df *ABS*	00000000 <built-in>
+00000000 l    df *ABS*	00000000 syscalls.S
+00400450 l     F .text	00000000 __syscall
+00000000 l    df *ABS*	00000000 __printf.c
+00400580 l     F .text	00000000 __pf_print
+004005c4 l     F .text	00000000 __pf_endfield
+004005f4 l     F .text	00000000 __pf_modifier
+00400704 l     F .text	00000000 __pf_getnum
+004007b8 l     F .text	00000000 __pf_setbase
+00400824 l     F .text	00000000 __pf_fill
+00400878 l     F .text	00000000 __pf_printstuff
+004009dc l     F .text	00000000 __pf_printnum
+00400a9c l     F .text	00000000 __pf_send
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 __assert.c
+00000000 l    df *ABS*	00000000 abort.c
+00000000 l    df *ABS*	00000000 snprintf.c
+00400d40 l     F .text	00000000 __snprintf_send
+004003c0 g     F .text	00000000 putchar
+0040048c g     F .text	00000000 waitpid
+004004d4 g     F .text	00000000 ioctl
+004001d0 g     F .text	00000000 printf
+10000000 g       .data	00000000 _fdata
+00400e08 g     F .text	00000000 snprintf
+00400420 g     F .text	00000000 __exit_hack
+10000000 g     O .sbss	00000004 errno
+0040055c g     F .text	00000000 __getcwd
+10007ff0 g       *ABS*	00000000 _gp
+004004cc g     F .text	00000000 getpid
+0040053c g     F .text	00000000 readlink
+00400544 g     F .text	00000000 dup2
+004004fc g     F .text	00000000 remove
+00400d98 g     F .text	00000000 vsnprintf
+0040051c g     F .text	00000000 rmdir
+004004ec g     F .text	00000000 ftruncate
+004004dc g     F .text	00000000 lseek
+00400d30 g     F .text	00000000 abort
+00400c30 g     F .text	00000000 __vprintf
+0040054c g     F .text	00000000 pipe
+00400504 g     F .text	00000000 rename
+004004a4 g     F .text	00000000 write
+004004f4 g     F .text	00000000 fstat
+004001fc g     F .text	00000000 vprintf
+004004b4 g     F .text	00000000 reboot
+00400524 g     F .text	00000000 chdir
+004000b0 g     F .text	00000000 __start
+004000b0 g       .text	00000000 _ftext
+0040056c g     F .text	00000000 lstat
+0040049c g     F .text	00000000 read
+10000004 g     O .sbss	00000004 __argv
+004004bc g     F .text	00000000 sync
+0040052c g     F .text	00000000 getdirentry
+00400484 g     F .text	00000000 fork
+0040047c g     F .text	00000000 execv
+004004c4 g     F .text	00000000 sbrk
+00400534 g     F .text	00000000 symlink
+10000000 g       *ABS*	00000000 __bss_start
+00400100 g     F .text	00000000 main
+00400554 g     F .text	00000000 __time
+004004e4 g     F .text	00000000 fsync
+00400564 g     F .text	00000000 stat
+10000000 g       *ABS*	00000000 _edata
+10000010 g       *ABS*	00000000 _end
+00400ce0 g     F .text	00000000 __bad_assert
+0040050c g     F .text	00000000 link
+00400410 g     F .text	00000000 exit
+00400230 g     F .text	00000000 atoi
+00400474 g     F .text	00000000 _exit
+00400cb0 g     F .text	00000000 strlen
+00400494 g     F .text	00000000 open
+00400360 g     F .text	00000000 strchr
+10000000 g       *ABS*	00000000 _fbss
+00400514 g     F .text	00000000 mkdir
+004004ac g     F .text	00000000 close
+
+
